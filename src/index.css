@@ -1,6 +1,20 @@
+@font-face {
+  font-family: 'Product Sans Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Regular'), url('./assets/fonts/ProductSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Product Sans Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans Bold'), url('./assets/fonts/ProductSans-Bold.woff') format('woff');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Product Sans Regular", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
