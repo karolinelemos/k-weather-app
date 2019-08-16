@@ -1,0 +1,49 @@
+.c-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: "Product Sans Bold", "Roboto", sans-serif;
+
+    &__list {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        font-size: 15px;
+
+        ul {
+            display: inline-flex;
+            list-style: none;
+
+            li {
+                margin-right: 20px;
+                padding: 10px 15px;
+                border-radius: 19px;
+
+                &.-active {
+                    color: #5D50FE;
+                    background: rgba(237, 240, 245, 0.1)
+                }
+            }
+        }
+    }
+
+    &__today-card {
+        margin: 0 auto;
+    }
+
+    &__days-card {
+        margin-top: -100px;
+        max-width: 100%;
+
+        &-title {
+            padding-left: 20px;
+            font-size: 19px;
+        }
+
+        @media (min-width: 700px) 
+        {
+            padding-left: 144px;
+        }
+    }
+}

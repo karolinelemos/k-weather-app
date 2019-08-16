@@ -1,0 +1,15 @@
+.c-header {
+    width: 100%;
+    display: flex;
+    padding-top: 67px;
+    padding-bottom: 36px;
+    justify-content: center;
+    align-items: center;
+
+    &__searched-for {
+        width: 80%;
+        text-align: center;
+        font-family: "Product Sans Bold", "Roboto", sans-serif;
+        font-size: 19px;
+    }
+}

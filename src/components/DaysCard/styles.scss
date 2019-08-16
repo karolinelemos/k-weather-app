@@ -1,0 +1,79 @@
+.c-days-card {
+    display: flex;
+    overflow: auto;
+    margin: 0 10px;
+    padding: 20px 0 60px 0;
+
+    @media (min-width: 700px) 
+    {
+        justify-content: center;
+    }
+
+    &__item {
+        min-width: 128px;
+        height: 176px;
+        overflow: auto;
+        margin-right: 15px;
+        border-radius: 23px;
+        color: #FFF;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 13px;
+
+        &__img {
+            position: relative;
+            top: -30px;
+            left: 110px;
+        }
+
+        &__day {
+            font-size: 14px;
+        }
+
+        &__temp {
+            font-size: 27px;
+            font-family: "Product Sans Regular", "Roboto", sans-serif;
+        }
+
+        &__humidity {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5)
+        } 
+
+        &__max-temp {
+            font-size: 14px;
+        }
+    
+
+        &.-green {
+            background: #28E0AE;
+            box-shadow: 0px 30px 28px -9px rgba(40, 224, 174, 0.5);
+        }
+
+        &.-pink {
+            background: #FF0090;
+            box-shadow: 0px 30px 28px -9px rgba(255, 0, 144, 0.5);
+        }
+
+        &.-orange {
+            background: #FFAE00;
+            box-shadow: 0px 30px 28px -9px rgba(255, 174, 0, 0.5);
+        }
+
+        &.-lightBlue {
+            background: #0090FF;
+            box-shadow: 0px 30px 28px -9px rgba(0, 144, 255, 0.5);
+        }
+
+        &.-red {
+            background: #DC0000;
+            box-shadow: 0px 30px 28px -9px rgba(220, 0, 0, 0.5);
+        }
+
+        &.-blue {
+            background: #0051FF;
+            box-shadow: 0px 30px 28px -9px rgba(0, 81, 255, 0.5);
+        }
+    }
+}

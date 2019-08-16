@@ -1,0 +1,79 @@
+.c-today-card {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 354px;
+        height: 314px;
+        color: #FFF;
+        background: url('../../assets/images/cards-mask.svg');
+        border-radius: 39px;
+
+        @media (min-width: 700px) 
+        {
+            width: 442px;
+            height: 374px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &:before {
+            width: 354px;
+            height: 314px;
+            position: absolute;
+            content: '';
+            z-index: -1;
+            background: #5D50FE;
+            border-radius: 39px;
+
+            @media (min-width: 700px) 
+            {
+                width: 442px;
+                height: 374px;
+            }
+        }
+
+        span {
+            display: block;
+        }
+
+        &__temp {
+            font-size: 120px;
+            font-family: "Product Sans Regular", "Roboto", sans-serif;
+        }
+
+        &__description {
+            font-size: 23px;
+            font-family: "Product Sans Regular", "Roboto", sans-serif;
+            margin: 15px 0px;
+        }
+
+        &__humidity-text {
+            font-size: 19px;
+        }
+
+        &__humidity-value {
+            font-size: 27px;
+            color: rgba(255, 255, 255, 0.2)
+        }
+    }
+
+    &__cloud {
+        position: relative;
+        left: 115px;
+        top: -100px; 
+        
+        @media (min-width: 700px) 
+        {
+            left: 150px;
+        }
+    }
+}
