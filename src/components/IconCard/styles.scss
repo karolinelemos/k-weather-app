@@ -3,5 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px 0;
+    margin-top: 15px;
+
+    img {
+        max-width: 45px;
+    }
 }

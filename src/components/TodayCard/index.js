@@ -3,25 +3,27 @@ import React from 'react'
 import './styles.scss'
 import cloudImg from '../../assets/images/cloud.svg'
 
-const TodayCard = () => (
-    <div className="c-today-card">
-        <div className="c-today-card__content">
-            <span className="c-today-card__content__temp">
-                25°
-            </span>
-            <span className="c-today-card__content__description">
-                Núvens & Sol
-            </span>
-            <span className="c-today-card__content__humidity-text">
-                Umidade
-            </span>
-            <span className="c-today-card__content__humidity-value">
-                35°
-            </span>
+const TodayCard = ({ todayInfo }) => (
+    todayInfo ? (
+        <div className="c-today-card">
+            <div className="c-today-card__content">
+                <span className="c-today-card__content__temp">
+                    {parseInt(todayInfo.main.temp)}°
+                </span>
+                <span className="c-today-card__content__description">
+                    {todayInfo.weather[0].description}
+                </span>
+                <span className="c-today-card__content__humidity-text">
+                    Umidade
+                </span>
+                <span className="c-today-card__content__humidity-value">
+                    {parseInt(todayInfo.main.humidity)}°
+                </span>
+            </div>
+            <img className="c-today-card__cloud" 
+                src={cloudImg} />
         </div>
-        <img className="c-today-card__cloud" 
-            src={cloudImg} />
-    </div>
+    ) : ''
 )
 
 export default TodayCard

@@ -1,19 +1,19 @@
 import React from 'react'
 import sunIcon from '../../assets/images/sun.svg'
-import windIcon from '../../assets/images/wind.svg'
+import cloudIcon from '../../assets/images/cloud-icon.svg'
 import rainIcon from '../../assets/images/rain.svg'
 import stormIcon from '../../assets/images/storm.svg'
 
 import './styles.scss'
 
 const iconList = {
-    'sunny-day': sunIcon,
-    'rainny-day': rainIcon,
-    'windy-day': windIcon,
-    'stormy-day': stormIcon 
+    'Clear': sunIcon,
+    'Rain': rainIcon,
+    'Clouds': cloudIcon,
+    'Thunderstorm': stormIcon 
 }
 
-const IconCard = ({ type }) => (
+const IconCard = ({ type = 'Clouds' }) => (
     <div className="c-icon-card">
         <img src={iconList[type]} />
     </div>

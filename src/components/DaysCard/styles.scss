@@ -21,6 +21,12 @@
         flex-direction: column;
         padding: 13px;
 
+        &__description {
+            font-size: 12px;
+            font-family: "Product Sans Regular", "Roboto", sans-serif;
+            margin-bottom: 15px;
+        }    
+
         &__img {
             position: relative;
             top: -30px;
