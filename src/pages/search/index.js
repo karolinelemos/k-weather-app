@@ -19,10 +19,23 @@ export default class Search extends Component {
     state = {
         data: null, 
         daysOfWeek: [],
-        dayInfo: null,
+        cardInfo: null,
+        todayInfo: null,
         activatedInfoBy: 'today'
     }
     getWeather = async (city = "São Paulo") => {
+        let { data } = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
+            params: {
+                q: city,
+                appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
+                lang: 'pt',
+                units: 'metric'
+            }
+        });
+
+        this.setState({ todayInfo: data, cardInfo: data })
+    }
+    getWeatherForWeek = async (city = "São Paulo") => {
         let { data } = await axios.get("http://api.openweathermap.org/data/2.5/forecast", {
             params: {
                 q: city,
@@ -32,7 +45,7 @@ export default class Search extends Component {
             }
         });
 
-        this.setState({ data, dayInfo: data.list[0] })
+        this.setState({ data })
         this.getDaysOfWeekInfo(data.list)
     }
     getDaysOfWeekInfo(list) {
@@ -51,9 +64,9 @@ export default class Search extends Component {
     getDayInfo(type = 'today') {
         return (e) => {
             if(type === 'today') {
-                this.setState({ dayInfo: this.state.data.list[0], activatedInfoBy: 'today' })
+                this.setState({ cardInfo: this.state.todayInfo, activatedInfoBy: 'today' })
             } else {
-                this.setState({ dayInfo: this.state.daysOfWeek[0], activatedInfoBy: 'tomorrow' })
+                this.setState({ cardInfo: this.state.daysOfWeek[0], activatedInfoBy: 'tomorrow' })
             }
         }
     }
@@ -61,7 +74,7 @@ export default class Search extends Component {
         return (
             <div className="p-seach">
                 <Header city={this.state.data && this.state.data.city}/>
-                <Content todayInfo={this.state.dayInfo}
+                <Content todayInfo={this.state.cardInfo}
                     nextDaysInfo={this.state.daysOfWeek} 
                     todayInfos={this.getDayInfo()}
                     tomorrowInfos={this.getDayInfo('tomorrow')}
@@ -71,5 +84,6 @@ export default class Search extends Component {
     }
     componentWillMount() {
         this.getWeather()
+        this.getWeatherForWeek()
     }
 }
