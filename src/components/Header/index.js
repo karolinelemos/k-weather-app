@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import searchIcon from '../../assets/images/search-icon.svg'
 import './styles.scss'
 
-const Header = ({ city }) => (
+const Header = ({ city, openModal }) => (
     city ? (
         <header className="c-header">
-            <div>//KL</div>
+            <Link to="/">//KL</Link>
             <div className="c-header__searched-for">
                 {city.name}, {city.country}
             </div>
-            <div className="c-header__search">
+            <div className="c-header__search" onClick={openModal}>
                 <img src={searchIcon} />
             </div>
         </header>
