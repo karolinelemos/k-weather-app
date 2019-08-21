@@ -40,7 +40,7 @@ export default class Search extends Component {
         this.setState({ isLoading: true })
         
         try { 
-            let { data, ...result } = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
+            let { data, ...result } = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
                 params: {
                     q: city,
                     appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
@@ -59,7 +59,7 @@ export default class Search extends Component {
         this.setState({ isLoading: true })
 
         try {
-            let { data } = await axios.get("http://api.openweathermap.org/data/2.5/forecast", {
+            let { data } = await axios.get("https://api.openweathermap.org/data/2.5/forecast", {
                 params: {
                     q: city,
                     appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
