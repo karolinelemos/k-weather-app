@@ -8,6 +8,7 @@ import Content from '../../components/Content'
 
 import './styles.scss'
 import closeIcon from '../../assets/images/close.svg'
+import Loader from '../../components/Loader';
 
 const today = new Date()
 const daysOfWeek = [
@@ -17,6 +18,7 @@ const daysOfWeek = [
     moment(today).add(4, 'days').format('YYYY-MM-DD 00:00:00'),
     moment(today).add(5, 'days').format('YYYY-MM-DD 00:00:00')
 ]
+const API_URL = 'https://api.openweathermap.org/data/2.5'
 
 export default class Search extends Component {
     state = {
@@ -28,7 +30,8 @@ export default class Search extends Component {
         modalIsOpened: false, 
         city: '',
         isLoading: false,
-        errorMessage: ''
+        errorMessage: '',
+        isLoadingPage: true
     }
     constructor() {
         super()
@@ -40,7 +43,7 @@ export default class Search extends Component {
         this.setState({ isLoading: true })
         
         try { 
-            let { data, ...result } = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
+            let { data, ...result } = await axios.get(`${API_URL}/weather`, {
                 params: {
                     q: city,
                     appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
@@ -49,7 +52,7 @@ export default class Search extends Component {
                 }
             })
 
-            this.setState({ todayInfo: data, cardInfo: data, isLoading: false, modalIsOpened: false })
+            this.setState({ todayInfo: data, cardInfo: data, isLoading: false, modalIsOpened: false, activatedInfoBy: 'today' })
         } catch {
             this.setState({ errorMessage: "Cidade inválida. Tente novamente.", isLoading: false })
         }
@@ -59,7 +62,7 @@ export default class Search extends Component {
         this.setState({ isLoading: true })
 
         try {
-            let { data } = await axios.get("https://api.openweathermap.org/data/2.5/forecast", {
+            let { data } = await axios.get(`${API_URL}/forecast`, {
                 params: {
                     q: city,
                     appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
@@ -85,7 +88,7 @@ export default class Search extends Component {
             }
         })
 
-        this.setState({ daysOfWeek: daysOfWeekInfo })
+        this.setState({ daysOfWeek: daysOfWeekInfo, isLoadingPage: false })
     }
     getDayInfo(type = 'today') {
         return (e) => {
@@ -113,6 +116,7 @@ export default class Search extends Component {
     render() {
         return (
             <div className="p-search">
+                <Loader isLoadingPage={this.state.isLoadingPage} />
                 <Header city={this.state.data && this.state.data.city} 
                     openModal={this.changeModalState(true)}/>
                 <Content todayInfo={this.state.cardInfo}
