@@ -44,8 +44,13 @@
 
         @media (min-width: 770px) 
         {
-            padding-left: 144px;
             width: 100%;
+            padding-left: 20px;
+        }
+
+        @media (min-width: 1000px)
+        {
+            padding-left: 144px;
         }
     }
 }
