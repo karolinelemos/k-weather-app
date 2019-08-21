@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d725f39b.chunk.css",
+    "main.js": "/static/js/main.3de7b445.chunk.js",
+    "runtime~main.js": "/static/js/runtime~main.ed43a6ec.js",
+    "static/js/2.ad1689ef.chunk.js": "/static/js/2.ad1689ef.chunk.js",
+    "index.html": "/index.html",
+    "precache-manifest.a642d3bd2eb1d940dae78ddfb379c8a6.js": "/precache-manifest.a642d3bd2eb1d940dae78ddfb379c8a6.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/index.css": "/static/media/ProductSans-Regular.f8c351bf.woff",
+    "static/media/card-cloud.svg": "/static/media/card-cloud.a8d6d8b7.svg",
+    "static/media/styles.scss": "/static/media/cards-mask.3aaa2f73.svg",
+    "static/media/close.svg": "/static/media/close.02ec7f27.svg",
+    "static/media/cloud-icon.svg": "/static/media/cloud-icon.1e640850.svg",
+    "static/media/cloud.svg": "/static/media/cloud.422b1899.svg",
+    "static/media/index.scss": "/static/media/home-background.27d1400d.svg",
+    "static/media/rain.svg": "/static/media/rain.807fcb6c.svg",
+    "static/media/search-icon.svg": "/static/media/search-icon.6a2b81d8.svg",
+    "static/media/storm.svg": "/static/media/storm.2e5b6717.svg",
+    "static/media/sun.svg": "/static/media/sun.756034fc.svg"
+  }
+}
