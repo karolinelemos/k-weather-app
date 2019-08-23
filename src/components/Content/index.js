@@ -2,7 +2,7 @@ import React from 'react'
 
 import TodayCard from '../../components/TodayCard'
 import DaysCard from '../../components/DaysCard'
-import './styles.scss'
+import './content.scss'
 
 const Content = ({ todayInfo, nextDaysInfo, todayInfos, tomorrowInfos, activatedInfoBy }) => (
     <div className="c-content">

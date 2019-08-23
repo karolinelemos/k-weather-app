@@ -6,7 +6,7 @@ import 'moment/locale/pt-br'
 import Header from '../../components/Header'
 import Content from '../../components/Content'
 
-import './styles.scss'
+import './search.scss'
 import closeIcon from '../../assets/images/close.svg'
 import Loader from '../../components/Loader';
 

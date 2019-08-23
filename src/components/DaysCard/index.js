@@ -4,7 +4,7 @@ import moment from 'moment'
 import IconCard from '../IconCard'
 import CloudIcon from '../../assets/images/card-cloud.svg'
 
-import './styles.scss'
+import './days-card.scss'
 
 const colorsClass = ['-green', '-pink', '-lightBlue', '-orange', '-blue']
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './styles.scss'
+import './loader.scss'
 
 const Loader = ({ isLoadingPage }) => (
     <div className={isLoadingPage ? "c-loader -is-loading" : "c-loader"}>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import searchIcon from '../../assets/images/search-icon.svg'
-import './styles.scss'
+import './header.scss'
 
 const Header = ({ city, openModal }) => (
     city ? (

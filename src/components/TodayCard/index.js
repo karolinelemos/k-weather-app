@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './styles.scss'
+import './today-card.scss'
 import cloudImg from '../../assets/images/cloud.svg'
 
 const TodayCard = ({ todayInfo }) => (

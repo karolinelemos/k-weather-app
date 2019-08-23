@@ -4,7 +4,7 @@ import cloudIcon from '../../assets/images/cloud-icon.svg'
 import rainIcon from '../../assets/images/rain.svg'
 import stormIcon from '../../assets/images/storm.svg'
 
-import './styles.scss'
+import './icon-card.scss'
 
 const iconList = {
     'Clear': sunIcon,
